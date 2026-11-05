@@ -1,0 +1,44 @@
+{
+  "issues": [
+    {
+      "level": "warning",
+      "code": "station-table-mismatch",
+      "message": "ট্রেন 706 @ parbatipur: স্টেশন টেবিল 23:50/00:10 বনাম সময়সূচী 23:50/23:55",
+      "source": "west-zone-timetable",
+      "page": 8,
+      "row": 32
+    },
+    {
+      "level": "warning",
+      "code": "station-table-mismatch",
+      "message": "ট্রেন 731 @ parbatipur: স্টেশন টেবিল 19:25/19:55 বনাম সময়সূচী 19:25/19:45",
+      "source": "west-zone-timetable",
+      "page": 8,
+      "row": 26
+    },
+    {
+      "level": "warning",
+      "code": "station-table-mismatch",
+      "message": "ট্রেন 764 @ ishwardi: স্টেশন টেবিল 23:45/00:05 বনাম সময়সূচী 23:45/23:55",
+      "source": "west-zone-timetable",
+      "page": 5,
+      "row": 1
+    },
+    {
+      "level": "warning",
+      "code": "station-table-mismatch",
+      "message": "ট্রেন 765 @ santahar: স্টেশন টেবিল 12:00/12:05 বনাম সময়সূচী 11:55/12:05",
+      "source": "west-zone-timetable",
+      "page": 7,
+      "row": 13
+    },
+    {
+      "level": "warning",
+      "code": "long-segment",
+      "message": "ট্রেন 432: উৎস থেকে গন্তব্য 12 ঘণ্টার বেশি",
+      "id": "west-zone-timetable",
+      "page": 4,
+      "row": 10
+    }
+  ]
+}

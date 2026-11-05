@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "id": "west-zone-timetable",
+      "title": "আন্তঃনগর, মেইল/কমিউটার ও লোকাল ট্রেনের তালিকা এবং সংক্ষিপ্ত সময়সূচী (পশ্চিমাঞ্চল)",
+      "zone": "west",
+      "kind": "text",
+      "file": "data/pdfs/west-zone-timetable.pdf",
+      "glyphmap": "data/dictionaries/glyphmap-west-zone.json",
+      "sha256": "bc40965826c3f597469d1ddff402b5d78bd340ac3512c22aab944ec28d2de533",
+      "documentDate": "2025-03-12",
+      "documentDateNote": "PDF metadata modification date; the printed timetable does not state an effective date. TODO-VERIFY"
+    },
+    {
+      "id": "east-zone-timetable-scanned",
+      "title": "আন্তঃনগর ট্রেনের তালিকা (পূর্বাঞ্চল) — স্ক্যান করা নথি",
+      "zone": "east",
+      "kind": "scan",
+      "file": "data/pdfs/east-zone-timetable-scanned.pdf",
+      "transcription": "data/transcriptions/east-zone-intercity.csv",
+      "offdaySummary": "data/transcriptions/east-zone-offday-summary.json",
+      "sha256": "d6e1af80252d98b45e8a07e7c30be1ec51f94ddf4b3c942daf4cc3a697137cc9",
+      "documentDate": "2025-03-12",
+      "documentDateNote": "PDF metadata modification date; effective date not printed. TODO-VERIFY",
+      "notTranscribed": "Pages 3-4 (commuter/mail, container, suspended trains) and 5-8 (abbreviated timetables with intermediate stations) are not transcribed yet."
+    }
+  ]
+}

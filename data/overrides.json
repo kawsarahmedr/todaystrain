@@ -1,0 +1,111 @@
+{
+  "_comment": "Manual corrections applied after parsing. Every entry needs a reason. Prefer setting a value to null over guessing a corrected value.",
+  "trains": {
+    "patch": [
+      {
+        "id": "783",
+        "set": {
+          "name": "টুঙ্গিপাড়া এক্সপ্রেস"
+        },
+        "reason": "PDF spells টুঙ্গীপাড়া in the list but টুঙ্গিপাড়া in its own timetable; using the latter."
+      },
+      {
+        "id": "784",
+        "set": {
+          "name": "টুঙ্গিপাড়া এক্সপ্রেস"
+        },
+        "reason": "Same as 783."
+      },
+      {
+        "id": "827",
+        "set": {
+          "name": "রূপসী বাংলা এক্সপ্রেস"
+        },
+        "reason": "PDF spells both রুপসীবাংলা and রূপসীবাংলা; using the standard spelling."
+      },
+      {
+        "id": "828",
+        "set": {
+          "name": "রূপসী বাংলা এক্সপ্রেস"
+        },
+        "reason": "Same as 827."
+      },
+      {
+        "id": "103",
+        "set": {
+          "name": "ভাটিয়াপাড়া মেইল"
+        },
+        "reason": "Glyph-order glitch in the PDF text (ভাটয়িাপাড়া)."
+      },
+      {
+        "id": "104",
+        "set": {
+          "name": "ভাটিয়াপাড়া মেইল"
+        },
+        "reason": "Same as 103."
+      },
+      {
+        "id": "3107",
+        "set": {
+          "status": "hidden"
+        },
+        "reason": "International service (Maitree/Bandhan/Mitali). Its current operating status could not be verified, so it is hidden until confirmed. Set status back to 'active' to publish."
+      },
+      {
+        "id": "3108",
+        "set": {
+          "status": "hidden"
+        },
+        "reason": "International service (Maitree/Bandhan/Mitali). Its current operating status could not be verified, so it is hidden until confirmed. Set status back to 'active' to publish."
+      },
+      {
+        "id": "3129",
+        "set": {
+          "status": "hidden"
+        },
+        "reason": "International service (Maitree/Bandhan/Mitali). Its current operating status could not be verified, so it is hidden until confirmed. Set status back to 'active' to publish."
+      },
+      {
+        "id": "3130",
+        "set": {
+          "status": "hidden"
+        },
+        "reason": "International service (Maitree/Bandhan/Mitali). Its current operating status could not be verified, so it is hidden until confirmed. Set status back to 'active' to publish."
+      },
+      {
+        "id": "3131",
+        "set": {
+          "status": "hidden"
+        },
+        "reason": "International service (Maitree/Bandhan/Mitali). Its current operating status could not be verified, so it is hidden until confirmed. Set status back to 'active' to publish."
+      },
+      {
+        "id": "3132",
+        "set": {
+          "status": "hidden"
+        },
+        "reason": "International service (Maitree/Bandhan/Mitali). Its current operating status could not be verified, so it is hidden until confirmed. Set status back to 'active' to publish."
+      }
+    ],
+    "stopPatch": [
+      {
+        "id": "784",
+        "station": "khatra",
+        "set": {
+          "arr": null
+        },
+        "reason": "PDF typo: খাটরা arrival printed as 22:49 although departure is 21:51 and the next stop (গোবরা) is 22:10. Arrival left blank until verified."
+      },
+      {
+        "id": "796",
+        "station": "jhikargachha",
+        "set": {
+          "dep": null
+        },
+        "reason": "PDF typo: ঝিকরগাছা departure printed as 09:21 although arrival is 06:19 and the terminus (বেনাপোল) is 07:00. Departure left blank until verified."
+      }
+    ],
+    "remove": [],
+    "add": []
+  }
+}
