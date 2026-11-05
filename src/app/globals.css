@@ -1,0 +1,123 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans:
+    var(--font-bn), 'Noto Sans Bengali', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --color-brand-50: #eff7fb;
+  --color-brand-100: #d9edf6;
+  --color-brand-200: #b4daec;
+  --color-brand-300: #82bfdc;
+  --color-brand-400: #4c9ec7;
+  --color-brand-500: #2a80ad;
+  --color-brand-600: #1e6891;
+  --color-brand-700: #1b5476;
+  --color-brand-800: #1a4762;
+  --color-brand-900: #183b52;
+  --color-brand-950: #0e2637;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 1rem;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-slate-900;
+    line-height: 1.4;
+  }
+  a {
+    @apply text-brand-700 underline-offset-4 hover:underline;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-amber-500;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-5xl px-4;
+  }
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-sm;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs leading-5 font-medium whitespace-nowrap;
+  }
+  .btn {
+    @apply inline-flex h-11 items-center justify-center rounded-lg px-5 font-semibold no-underline transition-colors hover:no-underline;
+  }
+  .btn-primary {
+    @apply bg-brand-700 hover:bg-brand-800 text-white;
+  }
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2;
+  }
+  /* Timetable tables: horizontally scrollable on small screens */
+  .tt-wrap {
+    @apply -mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0;
+  }
+  .tt {
+    @apply w-full border-collapse text-left text-[0.95rem];
+  }
+  .tt th {
+    @apply border-b border-slate-300 bg-slate-100 px-3 py-2 text-sm font-semibold whitespace-nowrap text-slate-700;
+  }
+  .tt td {
+    @apply border-b border-slate-200 px-3 py-2 align-top;
+  }
+  .tt tbody tr:nth-child(even) {
+    @apply bg-slate-50/60;
+  }
+  /* Long-form Bangla articles (guides, legal pages) */
+  .prose-bn {
+    @apply max-w-none text-slate-800;
+  }
+  .prose-bn h2 {
+    @apply mt-10 mb-3 text-xl font-bold sm:text-2xl;
+  }
+  .prose-bn h3 {
+    @apply mt-6 mb-2 text-lg font-semibold;
+  }
+  .prose-bn p {
+    @apply my-4;
+  }
+  .prose-bn ul {
+    @apply my-4 list-disc space-y-2 ps-6;
+  }
+  .prose-bn ol {
+    @apply my-4 list-decimal space-y-2 ps-6;
+  }
+  .prose-bn table {
+    @apply my-5 w-full border-collapse text-[0.95rem];
+  }
+  .prose-bn th,
+  .prose-bn td {
+    @apply border border-slate-200 px-3 py-2 text-left align-top;
+  }
+  .prose-bn th {
+    @apply bg-slate-100 font-semibold;
+  }
+  .note {
+    @apply rounded-lg border-s-4 border-amber-400 bg-amber-50 px-4 py-3 text-[0.95rem] text-amber-950;
+  }
+}
+
+/* "Today" layer: badges are reserved in the HTML and only revealed client-side,
+   so nothing shifts when the Dhaka-time script runs. */
+[data-today-badge] {
+  visibility: hidden;
+}
+[data-today-off='true'] [data-today-badge='off'] {
+  visibility: visible;
+}
+[data-today-off='true'] {
+  @apply bg-rose-50/70;
+}

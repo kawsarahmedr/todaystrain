@@ -1,0 +1,8 @@
+.next
+out
+node_modules
+data/generated
+data/pdfs
+public/data
+package-lock.json
+*.md

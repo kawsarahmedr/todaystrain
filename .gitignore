@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+build/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+.env*
+!.env.example
+.dev.vars
+.wrangler/
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+public/data/search-index.json
