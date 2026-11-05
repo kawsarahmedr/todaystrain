@@ -56,6 +56,18 @@ export function formatTimeBn(hhmm: string): string {
   return `${periodBn(h)} ${toBnDigits(h12)}:${toBnDigits(String(m).padStart(2, '0'))}`;
 }
 
+/** For sentences: "06:00" -> "সকাল ৬টায়", "22:45" -> "রাত ১০টা ৪৫ মিনিটে". */
+export function atTimeBn(hhmm: string): string {
+  const [hs, ms] = hhmm.split(':');
+  const h = Number(hs);
+  const m = Number(ms);
+  if (Number.isNaN(h) || Number.isNaN(m)) return hhmm;
+  const h12 = h % 12 === 0 ? 12 : h % 12;
+  return m === 0
+    ? `${periodBn(h)} ${toBnDigits(h12)}টায়`
+    : `${periodBn(h)} ${toBnDigits(h12)}টা ${toBnDigits(m)} মিনিটে`;
+}
+
 /** "21:45" -> "২১:৪৫" (24-hour, as printed in railway timetables). */
 export function formatTime24Bn(hhmm: string): string {
   return toBnDigits(hhmm);

@@ -4,6 +4,8 @@ import { SITE, absoluteUrl } from './site';
 /** Per-page metadata with a self-referencing canonical URL (paths end with "/"). */
 export function pageMetadata(opts: {
   title: string;
+  /** use the title as-is (no " | TodaysTrain" suffix) */
+  absoluteTitle?: boolean;
   description: string;
   path: string;
   noindex?: boolean;
@@ -11,7 +13,7 @@ export function pageMetadata(opts: {
 }): Metadata {
   const url = absoluteUrl(opts.path);
   return {
-    title: opts.title,
+    title: opts.absoluteTitle ? { absolute: opts.title } : opts.title,
     description: opts.description,
     alternates: { canonical: url },
     openGraph: {

@@ -136,7 +136,7 @@ export function servicesAt(stationId: string): Service[] {
 }
 
 /** Stations with enough trains (from the data) to deserve their own page. */
-export const MIN_STATION_TRAINS = 8;
+export const MIN_STATION_TRAINS = 12;
 export function stationPages(): { station: Station; count: number }[] {
   const counts = new Map<string, number>();
   for (const t of activeTrains()) {
