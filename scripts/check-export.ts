@@ -35,7 +35,7 @@ const indexable = new Set<string>();
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, 'utf8');
   const url = toUrlPath(file);
-  if (url.startsWith('/_next/') || url === '/_not-found/' || url === '/404.html') continue;
+  if (url.startsWith('/_next/') || ['/_not-found/', '/404/', '/404.html'].includes(url)) continue;
   if (!/<html[^>]*lang="bn"/.test(html)) problems.push(`${url}: missing lang="bn"`);
   if (!/<title>[^<]+<\/title>/.test(html)) problems.push(`${url}: missing <title>`);
   const main = html.match(/<main[\s\S]*<\/main>/)?.[0] ?? '';

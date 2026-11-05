@@ -6,6 +6,7 @@ import { TodayEnhancer } from '@/components/live/TodayEnhancer';
 import { RouteSearchForm } from '@/components/RouteSearchForm';
 import { TodayOffList } from '@/components/TodayOffList';
 import { DataNotice } from '@/components/ui';
+import { GUIDES } from '@/content/guides';
 import { NOTICES } from '@/content/notices';
 import { publishedRoutes, routeSlug } from '@/content/validate-routes';
 import { formatDateBn, formatDurationBn, toBnDigits } from '@/lib/bn';
@@ -124,6 +125,30 @@ export default function HomePage() {
                 <p className="text-sm text-slate-600">{formatDateBn(n.date)}</p>
                 <Link href={`/notices/#${n.id}`} className="mt-1 block font-semibold">
                   {n.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section aria-labelledby="guides">
+          <div className="flex items-baseline justify-between gap-4">
+            <h2 id="guides" className="text-xl font-bold">
+              ট্রেনযাত্রার গাইড
+            </h2>
+            <Link href="/guides/" className="text-sm">
+              সব গাইড
+            </Link>
+          </div>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+            {GUIDES.slice(0, 4).map((g) => (
+              <li key={g.slug}>
+                <Link
+                  href={`/guides/${g.slug}/`}
+                  className="card hover:border-brand-400 block h-full p-4 no-underline hover:no-underline"
+                >
+                  <span className="font-semibold text-slate-900">{g.title}</span>
+                  <span className="mt-1 block text-sm text-slate-600">{g.short}</span>
                 </Link>
               </li>
             ))}

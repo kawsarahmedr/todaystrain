@@ -1,0 +1,5 @@
+# ads.txt for todaystrain.com
+# Placeholder: no ad networks are authorised yet.
+# After AdSense approval, replace these comments with the exact line shown in your
+# AdSense account (Sites > ads.txt), which looks like:
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
