@@ -1,0 +1,9 @@
+# Local secrets for `npx wrangler pages dev out` (copy to .dev.vars; .dev.vars is git-ignored).
+# In production these are set ONLY as Cloudflare Pages environment variables (encrypted).
+RESEND_API_KEY=re_replace_me
+# Cloudflare's documented test secret that always passes verification:
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+CONTACT_TO_EMAIL=you@example.com
+# Optional:
+# CONTACT_FROM_EMAIL=TodaysTrain <noreply@todaystrain.com>
+# ALLOWED_ORIGINS=http://localhost:8788
