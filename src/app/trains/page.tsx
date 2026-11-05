@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { TodayEnhancer } from '@/components/live/TodayEnhancer';
-import { DataNotice, OffDay, PageHeader, T, TodayOffBadge, TrainLabel } from '@/components/ui';
+import { TrainTable } from '@/components/TrainTable';
+import { DataNotice, PageHeader } from '@/components/ui';
 import { toBnDigits } from '@/lib/bn';
-import { TYPE_LABEL, activeTrains, stationName, trainGroups } from '@/lib/data';
+import { activeTrains, stationName, trainGroups } from '@/lib/data';
+import { TRAIN_TYPE_PAGES } from '@/lib/train-types';
 import { pageMetadata } from '@/lib/seo';
-import type { TrainType } from '@/lib/types';
 
 export const metadata = pageMetadata({
   title: 'বাংলাদেশের সব ট্রেনের তালিকা: আন্তঃনগর, মেইল ও কমিউটার',
@@ -14,11 +15,10 @@ export const metadata = pageMetadata({
   path: '/trains/',
 });
 
-const ORDER: TrainType[] = ['intercity', 'mail', 'commuter', 'shuttle', 'local'];
-
 export default function TrainsPage() {
   const groups = trainGroups();
   const trains = activeTrains();
+  const intercity = trains.filter((t) => t.type === 'intercity');
   return (
     <div className="container-page py-8">
       <Breadcrumbs items={[{ name: 'ট্রেন', path: '/trains/' }]} />
@@ -54,52 +54,31 @@ export default function TrainsPage() {
         </ul>
       </section>
 
-      {ORDER.map((type) => {
-        const list = trains.filter((t) => t.type === type);
-        if (list.length === 0) return null;
-        return (
-          <section key={type} className="mt-12" id={type}>
-            <h2 className="mb-3 text-xl font-bold">
-              {TYPE_LABEL[type]} ট্রেন ({toBnDigits(list.length)}টি)
-            </h2>
-            <div className="tt-wrap">
-              <table className="tt">
-                <thead>
-                  <tr>
-                    <th scope="col">ট্রেন</th>
-                    <th scope="col">রুট</th>
-                    <th scope="col">ছাড়ে</th>
-                    <th scope="col">পৌঁছায়</th>
-                    <th scope="col">সাপ্তাহিক বন্ধ</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {list.map((t) => (
-                    <tr key={t.id} data-offday={t.offDay ?? undefined}>
-                      <td className="min-w-40">
-                        <TrainLabel train={t} />
-                      </td>
-                      <td className="min-w-40 text-[0.95rem]">
-                        {stationName(t.origin)} → {stationName(t.destination)}
-                      </td>
-                      <td>
-                        <T t={t.departure} />
-                      </td>
-                      <td>
-                        <T t={t.arrival} />
-                      </td>
-                      <td className="whitespace-nowrap">
-                        <OffDay day={t.offDay} />
-                        <TodayOffBadge />
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-        );
-      })}
+      <section className="mt-12" id="intercity">
+        <h2 className="mb-3 text-xl font-bold">
+          সব আন্তঃনগর ট্রেন ({toBnDigits(intercity.length)}টি)
+        </h2>
+        <TrainTable trains={intercity} />
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-xl font-bold">অন্যান্য ট্রেনের তালিকা</h2>
+        <ul className="mt-3 grid gap-3 sm:grid-cols-3">
+          {TRAIN_TYPE_PAGES.map((p) => (
+            <li key={p.slug}>
+              <Link
+                href={`/trains/${p.slug}/`}
+                className="card hover:border-brand-400 block h-full p-4 no-underline hover:no-underline"
+              >
+                <span className="font-semibold text-slate-900">{p.title}</span>
+                <span className="mt-1 block text-sm text-slate-600">
+                  {toBnDigits(trains.filter((t) => p.types.includes(t.type)).length)}টি ট্রেন
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <DataNotice unverified={trains.some((t) => !t.verified)} />
       <TodayEnhancer />

@@ -45,6 +45,11 @@ TOKEN_RE = re.compile(r"[0-9০-৯]{3,4}|[-–—.]{2,}|-")
 DIGITS_ONLY = re.compile(r"^[0-9০-৯\s]+$")
 
 
+def slugify(s: str) -> str:
+    """English URL slug; must stay identical to the site's expectations (lowercase, hyphens)."""
+    return re.sub(r"[^a-z0-9]+", "-", s.lower().replace("'", "").replace("’", "")).strip("-")
+
+
 def nfc(s: str) -> str:
     return unicodedata.normalize("NFC", s or "").strip()
 
@@ -392,6 +397,7 @@ def build(sources: list[dict], stations: Stations, names: dict, report: Report) 
                 "number": number,
                 "name": tr["name"],
                 "nameEn": (names["byNumber"].get(number) if number else names.get("byName", {}).get(tr["name"])),
+                "slug": None,
                 "type": tr["type"],
                 "zone": src["zone"],
                 "offDay": tr["offDay"],
@@ -527,6 +533,7 @@ def main() -> int:
     trains = build(sources, stations, names, report)
     trains = apply_overrides(trains, load_json(DATA / "overrides.json"), report)
     for t in trains:
+        t["slug"] = slugify(t["nameEn"]) if t.get("nameEn") else None
         check_sequence(t["stops"], t["number"] or t["id"], report, t.get("source", {}))
 
     for raw, wheres in sorted(stations.unknown.items()):
@@ -542,12 +549,18 @@ def main() -> int:
 
     used = {s["station"] for t in trains for s in t["stops"]} | {t["origin"] for t in trains} | {t["destination"] for t in trains}
     station_out = [s for s in stations.items if s["id"] in used]
+    pairs: dict[tuple[str, str], list[str]] = {}
+    for t in trains:
+        if t["status"] == "active":
+            pairs.setdefault((t["origin"], t["destination"]), []).append(t["id"])
+    routes = [{"from": a, "to": b, "trains": ids} for (a, b), ids in sorted(pairs.items())]
     payload = {
         "trains.json": dumps({"trains": trains}),
+        "routes.json": dumps({"_comment": "Every direct origin->destination pair of active trains (derived).", "routes": routes}),
         "stations.json": dumps({"stations": station_out}),
         "report.json": dumps({"issues": report.issues}),
     }
-    digest = hashlib.sha256("".join(payload[k] for k in ("trains.json", "stations.json")).encode()).hexdigest()
+    digest = hashlib.sha256("".join(payload[k] for k in ("trains.json", "stations.json", "routes.json")).encode()).hexdigest()
     meta_path = GEN / "meta.json"
     old_meta = load_json(meta_path) if meta_path.exists() else {}
     if old_meta.get("contentHash") == digest:
@@ -561,6 +574,7 @@ def main() -> int:
         "counts": {
             "trains": len(trains),
             "stations": len(station_out),
+            "routes": len(routes),
             "errors": sum(i["level"] == "error" for i in report.issues),
             "warnings": sum(i["level"] == "warning" for i in report.issues),
         },

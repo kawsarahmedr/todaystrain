@@ -12,6 +12,10 @@ export const TrainSchema = z.object({
   number: z.string().nullable(),
   name: z.string().min(1),
   nameEn: z.string().nullable(),
+  slug: z
+    .string()
+    .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
+    .nullable(),
   type: z.enum(['intercity', 'mail', 'commuter', 'local', 'shuttle', 'international']),
   zone: z.enum(['west', 'east']),
   offDay: z.number().int().min(0).max(6).nullable(),

@@ -121,3 +121,13 @@
 [data-today-off='true'] {
   @apply bg-rose-50/70;
 }
+
+/* Long below-the-fold lists: let the browser skip layout/paint until scrolled near. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1200px;
+}
+
+.consent-ok #consent {
+  display: none;
+}

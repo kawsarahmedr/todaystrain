@@ -1,6 +1,6 @@
 {
   "lastUpdated": "2026-11-05",
-  "contentHash": "ff5514bfb864c241f39f2a35ab01f56b13d8622816e888d2e86244ade4eb1e59",
+  "contentHash": "60d694bcc2c58915294dde0fab069911c8562ec8a847f8e15f4295a0658a9537",
   "sources": [
     {
       "id": "west-zone-timetable",
@@ -24,6 +24,7 @@
   "counts": {
     "trains": 241,
     "stations": 150,
+    "routes": 126,
     "errors": 0,
     "warnings": 5
   }

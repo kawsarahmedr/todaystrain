@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
-import { ConsentNotice } from '@/components/ConsentNotice';
+import { ConsentNotice, consentHeadScript } from '@/components/ConsentNotice';
 import { SiteFooter } from '@/components/layout/SiteFooter';
 import { SiteHeader } from '@/components/layout/SiteHeader';
 import { SITE } from '@/lib/site';
@@ -11,8 +11,11 @@ const notoBengali = localFont({
   src: '../fonts/NotoSansBengali-Variable-bengali.woff2',
   variable: '--font-bn',
   weight: '100 900',
-  display: 'swap',
+  // 'optional' = never swap fonts after first paint, so Bangla text cannot reflow (CLS).
+  // First-time visitors on slow connections see the system Bangla font for that page view.
+  display: 'optional',
   preload: true,
+  adjustFontFallback: false,
   fallback: ['system-ui', 'sans-serif'],
 });
 
@@ -32,7 +35,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="bn" className={notoBengali.variable}>
+    // suppressHydrationWarning: the consent head script may add a class to <html> before hydration.
+    <html lang="bn" className={notoBengali.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: consentHeadScript }} />
+      </head>
       <body className="flex min-h-screen flex-col">
         <a href="#main" className="skip-link">
           মূল অংশে যান

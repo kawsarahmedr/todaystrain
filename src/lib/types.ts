@@ -7,6 +7,8 @@ export type Train = {
   number: string | null;
   name: string;
   nameEn: string | null;
+  /** English URL slug (from nameEn), null if no English name */
+  slug: string | null;
   type: TrainType;
   zone: 'west' | 'east';
   /** Weekly off-day as JS weekday (0 = Sunday … 6 = Saturday); null = runs every day. */
@@ -43,5 +45,5 @@ export type Meta = {
   lastUpdated: string;
   contentHash: string;
   sources: SourceMeta[];
-  counts: { trains: number; stations: number; errors: number; warnings: number };
+  counts: { trains: number; stations: number; routes: number; errors: number; warnings: number };
 };

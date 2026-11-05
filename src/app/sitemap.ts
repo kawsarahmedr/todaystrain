@@ -5,6 +5,7 @@ import { NOTICES } from '@/content/notices';
 import { publishedRoutes, routeSlug } from '@/content/validate-routes';
 import { meta, stationPages, trainGroups } from '@/lib/data';
 import { absoluteUrl } from '@/lib/site';
+import { TRAIN_TYPE_PAGES } from '@/lib/train-types';
 import { dhakaNow } from '@/lib/time';
 
 export const dynamic = 'force-static';
@@ -22,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     u('/', today),
     u('/today/', today),
     u('/trains/', data),
+    ...TRAIN_TYPE_PAGES.map((p) => u(`/trains/${p.slug}/`, data)),
     u('/routes/', data),
     u('/stations/', data),
     u('/notices/', latest(NOTICES.map((n) => n.date))),

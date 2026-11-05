@@ -1,0 +1,988 @@
+{
+  "_comment": "Every direct origin->destination pair of active trains (derived).",
+  "routes": [
+    {
+      "from": "benapole",
+      "to": "dhaka",
+      "trains": [
+        "795",
+        "827"
+      ]
+    },
+    {
+      "from": "benapole",
+      "to": "khulna",
+      "trains": [
+        "54"
+      ]
+    },
+    {
+      "from": "benapole",
+      "to": "mongla",
+      "trains": [
+        "96"
+      ]
+    },
+    {
+      "from": "bhanga",
+      "to": "dhaka",
+      "trains": [
+        "122"
+      ]
+    },
+    {
+      "from": "bhanga",
+      "to": "kalukhali",
+      "trains": [
+        "102"
+      ]
+    },
+    {
+      "from": "bhanga",
+      "to": "rajbari",
+      "trains": [
+        "124",
+        "106"
+      ]
+    },
+    {
+      "from": "bhatiapara-ghat",
+      "to": "kalukhali",
+      "trains": [
+        "104"
+      ]
+    },
+    {
+      "from": "bhuapur",
+      "to": "dhaka",
+      "trains": [
+        "800"
+      ]
+    },
+    {
+      "from": "biral",
+      "to": "lalmonirhat",
+      "trains": [
+        "62"
+      ]
+    },
+    {
+      "from": "bonarpara",
+      "to": "parbatipur",
+      "trains": [
+        "59"
+      ]
+    },
+    {
+      "from": "bonarpara",
+      "to": "santahar",
+      "trains": [
+        "492"
+      ]
+    },
+    {
+      "from": "burimari",
+      "to": "dhaka",
+      "trains": [
+        "810"
+      ]
+    },
+    {
+      "from": "burimari",
+      "to": "lalmonirhat",
+      "trains": [
+        "66",
+        "72",
+        "452",
+        "454",
+        "456"
+      ]
+    },
+    {
+      "from": "burimari",
+      "to": "santahar",
+      "trains": [
+        "714"
+      ]
+    },
+    {
+      "from": "chandpur",
+      "to": "chattogram",
+      "trains": [
+        "730"
+      ]
+    },
+    {
+      "from": "chapainawabganj",
+      "to": "dhaka",
+      "trains": [
+        "792"
+      ]
+    },
+    {
+      "from": "chapainawabganj",
+      "to": "ishwardi",
+      "trains": [
+        "6"
+      ]
+    },
+    {
+      "from": "chapainawabganj",
+      "to": "rajshahi",
+      "trains": [
+        "110",
+        "128"
+      ]
+    },
+    {
+      "from": "chapainawabganj",
+      "to": "rohanpur",
+      "trains": [
+        "130",
+        "585"
+      ]
+    },
+    {
+      "from": "chattogram",
+      "to": "chandpur",
+      "trains": [
+        "729"
+      ]
+    },
+    {
+      "from": "chattogram",
+      "to": "coxs-bazar",
+      "trains": [
+        "821",
+        "823"
+      ]
+    },
+    {
+      "from": "chattogram",
+      "to": "dhaka",
+      "trains": [
+        "701",
+        "703",
+        "721",
+        "741",
+        "787",
+        "801"
+      ]
+    },
+    {
+      "from": "chattogram",
+      "to": "jamalpur",
+      "trains": [
+        "785"
+      ]
+    },
+    {
+      "from": "chattogram",
+      "to": "sylhet",
+      "trains": [
+        "719",
+        "723"
+      ]
+    },
+    {
+      "from": "chilahati",
+      "to": "dhaka",
+      "trains": [
+        "766",
+        "806"
+      ]
+    },
+    {
+      "from": "chilahati",
+      "to": "khulna",
+      "trains": [
+        "728",
+        "748"
+      ]
+    },
+    {
+      "from": "chilahati",
+      "to": "parbatipur",
+      "trains": [
+        "592",
+        "28"
+      ]
+    },
+    {
+      "from": "chilahati",
+      "to": "rajshahi",
+      "trains": [
+        "732",
+        "734"
+      ]
+    },
+    {
+      "from": "coxs-bazar",
+      "to": "chattogram",
+      "trains": [
+        "822",
+        "824"
+      ]
+    },
+    {
+      "from": "coxs-bazar",
+      "to": "dhaka",
+      "trains": [
+        "813",
+        "815"
+      ]
+    },
+    {
+      "from": "dewanganj-bazar",
+      "to": "dhaka",
+      "trains": [
+        "708",
+        "744"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "benapole",
+      "trains": [
+        "796",
+        "828"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "bhanga",
+      "trains": [
+        "123"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "bhuapur",
+      "trains": [
+        "799"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "burimari",
+      "trains": [
+        "809"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "chapainawabganj",
+      "trains": [
+        "5",
+        "791"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "chattogram",
+      "trains": [
+        "702",
+        "704",
+        "722",
+        "742",
+        "788",
+        "802"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "chilahati",
+      "trains": [
+        "765",
+        "805"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "coxs-bazar",
+      "trains": [
+        "814",
+        "816"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "dewanganj-bazar",
+      "trains": [
+        "707",
+        "743"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "khulna",
+      "trains": [
+        "26",
+        "726",
+        "764",
+        "826"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "kishoreganj",
+      "trains": [
+        "737",
+        "749",
+        "781"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "kurigram",
+      "trains": [
+        "797"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "lalmonirhat",
+      "trains": [
+        "751"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "mohanganj",
+      "trains": [
+        "777",
+        "789"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "noakhali",
+      "trains": [
+        "712"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "panchagarh",
+      "trains": [
+        "705",
+        "757",
+        "793"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "rajshahi",
+      "trains": [
+        "753",
+        "755",
+        "759",
+        "769"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "rangpur",
+      "trains": [
+        "771"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "sirajganj-bazar",
+      "trains": [
+        "776"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "sylhet",
+      "trains": [
+        "709",
+        "717",
+        "739",
+        "773"
+      ]
+    },
+    {
+      "from": "dhaka",
+      "to": "tarakandi",
+      "trains": [
+        "735",
+        "745"
+      ]
+    },
+    {
+      "from": "dhalarchar",
+      "to": "rajshahi",
+      "trains": [
+        "779"
+      ]
+    },
+    {
+      "from": "goalanda-ghat",
+      "to": "ishwardi",
+      "trains": [
+        "511"
+      ]
+    },
+    {
+      "from": "goalanda-ghat",
+      "to": "poradah",
+      "trains": [
+        "506",
+        "508"
+      ]
+    },
+    {
+      "from": "gobra",
+      "to": "rajshahi",
+      "trains": [
+        "783"
+      ]
+    },
+    {
+      "from": "ishwardi",
+      "to": "dhaka",
+      "trains": [
+        "99"
+      ]
+    },
+    {
+      "from": "ishwardi",
+      "to": "pabna",
+      "trains": [
+        "111"
+      ]
+    },
+    {
+      "from": "ishwardi",
+      "to": "parbatipur",
+      "trains": [
+        "541"
+      ]
+    },
+    {
+      "from": "ishwardi",
+      "to": "rajbari",
+      "trains": [
+        "512"
+      ]
+    },
+    {
+      "from": "ishwardi",
+      "to": "rohanpur",
+      "trains": [
+        "57"
+      ]
+    },
+    {
+      "from": "jamalpur",
+      "to": "chattogram",
+      "trains": [
+        "786"
+      ]
+    },
+    {
+      "from": "kalukhali",
+      "to": "bhanga",
+      "trains": [
+        "105"
+      ]
+    },
+    {
+      "from": "kalukhali",
+      "to": "bhatiapara-ghat",
+      "trains": [
+        "103"
+      ]
+    },
+    {
+      "from": "kaunia",
+      "to": "ramna-bazar",
+      "trains": [
+        "119"
+      ]
+    },
+    {
+      "from": "khulna",
+      "to": "benapole",
+      "trains": [
+        "53"
+      ]
+    },
+    {
+      "from": "khulna",
+      "to": "chapainawabganj",
+      "trains": [
+        "15"
+      ]
+    },
+    {
+      "from": "khulna",
+      "to": "chilahati",
+      "trains": [
+        "727",
+        "747"
+      ]
+    },
+    {
+      "from": "khulna",
+      "to": "dhaka",
+      "trains": [
+        "25",
+        "725",
+        "763",
+        "825"
+      ]
+    },
+    {
+      "from": "khulna",
+      "to": "parbatipur",
+      "trains": [
+        "23"
+      ]
+    },
+    {
+      "from": "khulna",
+      "to": "rajshahi",
+      "trains": [
+        "715",
+        "761"
+      ]
+    },
+    {
+      "from": "kishoreganj",
+      "to": "dhaka",
+      "trains": [
+        "738",
+        "750",
+        "782"
+      ]
+    },
+    {
+      "from": "kurigram",
+      "to": "dhaka",
+      "trains": [
+        "798"
+      ]
+    },
+    {
+      "from": "kurigram",
+      "to": "lalmonirhat",
+      "trains": [
+        "98"
+      ]
+    },
+    {
+      "from": "kurigram",
+      "to": "parbatipur",
+      "trains": [
+        "421"
+      ]
+    },
+    {
+      "from": "lalmonirhat",
+      "to": "biral",
+      "trains": [
+        "61"
+      ]
+    },
+    {
+      "from": "lalmonirhat",
+      "to": "burimari",
+      "trains": [
+        "65",
+        "71",
+        "451",
+        "453",
+        "455"
+      ]
+    },
+    {
+      "from": "lalmonirhat",
+      "to": "dhaka",
+      "trains": [
+        "752"
+      ]
+    },
+    {
+      "from": "lalmonirhat",
+      "to": "kurigram",
+      "trains": [
+        "97"
+      ]
+    },
+    {
+      "from": "lalmonirhat",
+      "to": "parbatipur",
+      "trains": [
+        "demu-rangpur-commuter-1",
+        "63",
+        "69",
+        "411",
+        "413",
+        "461"
+      ]
+    },
+    {
+      "from": "lalmonirhat",
+      "to": "santahar",
+      "trains": [
+        "20",
+        "22",
+        "482"
+      ]
+    },
+    {
+      "from": "mohanganj",
+      "to": "dhaka",
+      "trains": [
+        "778",
+        "790"
+      ]
+    },
+    {
+      "from": "mongla",
+      "to": "benapole",
+      "trains": [
+        "95"
+      ]
+    },
+    {
+      "from": "noakhali",
+      "to": "dhaka",
+      "trains": [
+        "711"
+      ]
+    },
+    {
+      "from": "pabna",
+      "to": "ishwardi",
+      "trains": [
+        "112"
+      ]
+    },
+    {
+      "from": "panchagarh",
+      "to": "dhaka",
+      "trains": [
+        "706",
+        "758",
+        "794"
+      ]
+    },
+    {
+      "from": "panchagarh",
+      "to": "parbatipur",
+      "trains": [
+        "demu-panchagarh-commuter-2",
+        "42",
+        "432",
+        "434"
+      ]
+    },
+    {
+      "from": "panchagarh",
+      "to": "rajshahi",
+      "trains": [
+        "804"
+      ]
+    },
+    {
+      "from": "panchagarh",
+      "to": "santahar",
+      "trains": [
+        "768",
+        "8"
+      ]
+    },
+    {
+      "from": "parbatipur",
+      "to": "bonarpara",
+      "trains": [
+        "60"
+      ]
+    },
+    {
+      "from": "parbatipur",
+      "to": "chilahati",
+      "trains": [
+        "591",
+        "27"
+      ]
+    },
+    {
+      "from": "parbatipur",
+      "to": "ishwardi",
+      "trains": [
+        "542"
+      ]
+    },
+    {
+      "from": "parbatipur",
+      "to": "khulna",
+      "trains": [
+        "24"
+      ]
+    },
+    {
+      "from": "parbatipur",
+      "to": "lalmonirhat",
+      "trains": [
+        "demu-rangpur-commuter-2",
+        "64",
+        "70",
+        "412",
+        "414",
+        "462"
+      ]
+    },
+    {
+      "from": "parbatipur",
+      "to": "panchagarh",
+      "trains": [
+        "demu-panchagarh-commuter-1",
+        "41",
+        "431",
+        "433"
+      ]
+    },
+    {
+      "from": "parbatipur",
+      "to": "rajshahi",
+      "trains": [
+        "32"
+      ]
+    },
+    {
+      "from": "parbatipur",
+      "to": "ramna-bazar",
+      "trains": [
+        "422"
+      ]
+    },
+    {
+      "from": "poradah",
+      "to": "goalanda-ghat",
+      "trains": [
+        "505"
+      ]
+    },
+    {
+      "from": "poradah",
+      "to": "rajbari",
+      "trains": [
+        "507"
+      ]
+    },
+    {
+      "from": "rajbari",
+      "to": "bhanga",
+      "trains": [
+        "121",
+        "101"
+      ]
+    },
+    {
+      "from": "rajbari",
+      "to": "goalanda-ghat",
+      "trains": [
+        "513",
+        "515"
+      ]
+    },
+    {
+      "from": "rajshahi",
+      "to": "chapainawabganj",
+      "trains": [
+        "109",
+        "127"
+      ]
+    },
+    {
+      "from": "rajshahi",
+      "to": "chilahati",
+      "trains": [
+        "731",
+        "733"
+      ]
+    },
+    {
+      "from": "rajshahi",
+      "to": "dhaka",
+      "trains": [
+        "754",
+        "756",
+        "760",
+        "770"
+      ]
+    },
+    {
+      "from": "rajshahi",
+      "to": "dhalarchar",
+      "trains": [
+        "780"
+      ]
+    },
+    {
+      "from": "rajshahi",
+      "to": "gobra",
+      "trains": [
+        "784"
+      ]
+    },
+    {
+      "from": "rajshahi",
+      "to": "khulna",
+      "trains": [
+        "716",
+        "762"
+      ]
+    },
+    {
+      "from": "rajshahi",
+      "to": "panchagarh",
+      "trains": [
+        "803"
+      ]
+    },
+    {
+      "from": "rajshahi",
+      "to": "parbatipur",
+      "trains": [
+        "31"
+      ]
+    },
+    {
+      "from": "rajshahi",
+      "to": "rohanpur",
+      "trains": [
+        "77",
+        "125"
+      ]
+    },
+    {
+      "from": "ramna-bazar",
+      "to": "rangpur",
+      "trains": [
+        "120",
+        "415"
+      ]
+    },
+    {
+      "from": "rangpur",
+      "to": "dhaka",
+      "trains": [
+        "772"
+      ]
+    },
+    {
+      "from": "rangpur",
+      "to": "kurigram",
+      "trains": [
+        "416"
+      ]
+    },
+    {
+      "from": "rangpur",
+      "to": "lalmonirhat",
+      "trains": [
+        "100"
+      ]
+    },
+    {
+      "from": "rohanpur",
+      "to": "chapainawabganj",
+      "trains": [
+        "129"
+      ]
+    },
+    {
+      "from": "rohanpur",
+      "to": "ishwardi",
+      "trains": [
+        "58"
+      ]
+    },
+    {
+      "from": "rohanpur",
+      "to": "khulna",
+      "trains": [
+        "16"
+      ]
+    },
+    {
+      "from": "rohanpur",
+      "to": "rajshahi",
+      "trains": [
+        "78",
+        "126"
+      ]
+    },
+    {
+      "from": "santahar",
+      "to": "bonarpara",
+      "trains": [
+        "491"
+      ]
+    },
+    {
+      "from": "santahar",
+      "to": "burimari",
+      "trains": [
+        "713"
+      ]
+    },
+    {
+      "from": "santahar",
+      "to": "lalmonirhat",
+      "trains": [
+        "19",
+        "21",
+        "481"
+      ]
+    },
+    {
+      "from": "santahar",
+      "to": "panchagarh",
+      "trains": [
+        "767",
+        "7"
+      ]
+    },
+    {
+      "from": "sirajganj-bazar",
+      "to": "dhaka",
+      "trains": [
+        "775"
+      ]
+    },
+    {
+      "from": "sylhet",
+      "to": "chattogram",
+      "trains": [
+        "720",
+        "724"
+      ]
+    },
+    {
+      "from": "sylhet",
+      "to": "dhaka",
+      "trains": [
+        "710",
+        "718",
+        "740",
+        "774"
+      ]
+    },
+    {
+      "from": "tarakandi",
+      "to": "dhaka",
+      "trains": [
+        "736",
+        "746"
+      ]
+    }
+  ]
+}

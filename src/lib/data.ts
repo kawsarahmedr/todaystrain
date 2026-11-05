@@ -80,11 +80,11 @@ export type TrainGroup = {
 };
 
 export function hasTrainPage(t: Train): boolean {
-  return t.status === 'active' && t.stopsSource === 'timetable' && !!t.nameEn;
+  return t.status === 'active' && t.stopsSource === 'timetable' && !!t.slug && !!t.nameEn;
 }
 
 export function trainPath(t: Train): string | null {
-  return hasTrainPage(t) ? `/train/${slugify(t.nameEn!)}/` : null;
+  return hasTrainPage(t) ? `/train/${t.slug}/` : null;
 }
 
 let groupsCache: TrainGroup[] | null = null;
@@ -93,7 +93,7 @@ export function trainGroups(): TrainGroup[] {
   const map = new Map<string, TrainGroup>();
   for (const t of activeTrains()) {
     if (!hasTrainPage(t)) continue;
-    const slug = slugify(t.nameEn!);
+    const slug = t.slug!;
     const g = map.get(slug) ?? { slug, name: t.name, nameEn: t.nameEn!, zone: t.zone, trains: [] };
     g.trains.push(t);
     map.set(slug, g);

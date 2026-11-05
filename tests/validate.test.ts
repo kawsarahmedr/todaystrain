@@ -9,6 +9,7 @@ const base = {
   number: '1',
   name: 'ট্রেন',
   nameEn: 'Train',
+  slug: 'train',
   type: 'intercity',
   zone: 'west',
   offDay: null,
